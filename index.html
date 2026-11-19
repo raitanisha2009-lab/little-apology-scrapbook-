@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Scrapbook For You ♡</title>
+
+<style>
+
+* { box-sizing: border-box; }
+
+body {
+
+  margin: 0;
+
+  padding: 20px 12px;
+
+  background: #f4e2df;
+
+  color: #75565a;
+
+  font-family: Georgia, serif;
+
+  text-align: center;
+
+}
+
+.page {
+
+  display: none;
+
+  max-width: 650px;
+
+  min-height: 450px;
+
+  margin: 20px auto;
+
+  padding: 30px 22px;
+
+  background: #fffaf1;
+
+  border: 2px solid #e8c9c1;
+
+  border-radius: 8px;
+
+  box-shadow: 5px 7px 0 #dcbab2;
+
+}
+
+.page.active { display: block; }
+
+h1, h2 { color: #b66f7c; }
+
+h1 { font-size: 34px; }
+
+p { font-size: 18px; line-height: 1.7; }
+
+button {
+
+  background: #ce8995;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 25px;
+
+  padding: 12px 22px;
+
+  font-size: 16px;
+
+  margin: 9px;
+
+}
+
+.sticker { font-size: 35px; margin: 18px; }
+
+.envelope { font-size: 90px; cursor: pointer; }
+
+.letter {
+
+  background: #fff0e9;
+
+  border: 1px dashed #ce9296;
+
+  padding: 20px;
+
+  border-radius: 8px;
+
+  text-align: left;
+
+}
+
+.photo-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+}
+
+.polaroid {
+
+  background: white;
+
+  padding: 10px;
+
+  box-shadow: 2px 3px 9px #d8c0b9;
+
+}
+
+.polaroid img {
+
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+}
+
+.note {
+
+  background: #fae8e5;
+
+  padding: 15px;
+
+  margin: 12px;
+
+  cursor: pointer;
+
+}
+
+.heart { font-size: 38px; cursor: pointer; margin: 12px; }
+
+@media(max-width:450px) {
+
+  .page { padding: 20px 14px; }
+
+}
+
+</style>
+
+</head>
+
+<body> 
+<!-- PAGE 1: SCRAPBOOK COVER -->
+
+<section id="home" class="page active">
+
+  <div class="sticker">💕 ✿ ♡ ✿ 💕</div>
+
+  <h1>A Little Something For You</h1>
+
+  <p>A tiny scrapbook filled with memories, thoughts and a little apology.</p>
+
+  <div class="sticker">🧸💞🌻</div>
+
+  <p>Made especially for you by your tonsa.</p>
+
+  <button onclick="go('envelope')">Open your scrapbook ♡</button>
+
+</section>
+
+<!-- PAGE 2: ENVELOPE -->
+
+<section id="envelope" class="page">
+
+  <h2>You have a letter!</h2>
+
+  <div class="envelope" onclick="go('letter')">💌</div>
+
+  <p>Tap the envelope to open it.</p>
+
+  <button onclick="go('home')">← Back</button>
+
+</section>
+
+<!-- PAGE 3: APOLOGY LETTER -->
+
+<section id="letter" class="page">
+
+  <h2>A Letter For You</h2>
+
+  <div class="letter">
+
+    <p>hey you,</p>
+
+    <p>i made this because i wanted to tell you something but not in a boring way so .</p>
+
+    <p>i just wanted to say im sorry.</p>
+
+    <p> i know saying sorry wont do anything but ik you love me so dont be angry anymore okay?.</p>
+
+    <p>tonsa loves her bhattu so much 🫶🏻</p>
+
+    <p>With all the love in the world ,<br>your tonsa💞 ♡</p>
+
+  </div>
+
+  <button onclick="go('memories')">Turn the page →</button>
+
+</section>
+
+<!-- PAGE 4: MEMORY ALBUM -->
+
+<section id="memories" class="page">
+
+  <h2>Our Little Memory Album</h2>
+
+  <p>Some moments I wanted to keep close.</p>
+
+  <div class="photo-grid">
+
+    <div class="polaroid">
+
+      <img src="https://placehold.co/400x400/f2d6d8/9b6871?text=Photo+1" alt="Memory 1">
+
+      <p>Our favourite moment ♡</p>
+
+    </div>
+
+    <div class="polaroid">
+
+      <img src="https://placehold.co/400x400/f5dfcf/9b6871?text=Photo+2" alt="Memory 2">
+
+      <p>A little memory</p>
+
+    </div>
+
+    <div class="polaroid">
+
+      <img src="https://placehold.co/400x400/e9d9e8/9b6871?text=Photo+3" alt="Memory 3">
+
+      <p>One to remember</p>
+
+    </div>
+
+    <div class="polaroid">
+
+      <img src="https://placehold.co/400x400/f4e5ce/9b6871?text=Photo+4" alt="Memory 4">
+
+      <p>Another little moment</p>
+
+    </div>
+
+  </div>
+
+  <button onclick="go('notes')">Next page →</button>
+
+</section>
+
+<!-- PAGE 5: LITTLE NOTES -->
+
+<section id="notes" class="page">
+
+  <h2>Little Things I Appreciate</h2>
+
+  <p>Tap each note to reveal a message.</p>
+
+  <div class="note" onclick="reveal(this, 'i might not say it but ilysm. ♡')">
+
+    💌 Open note 1
+
+  </div>
+
+  <div class="note" onclick="reveal(this,'im so grateful i met you even if it was at the end .')">
+
+    🌷 Open note 2
+
+  </div>
+
+  <div class="note" onclick="reveal(this, 'i hope we stay together for a long time and watch each other grow.')">
+
+    🎀 Open note 3
+
+  </div>
+
+  <button onclick="go('game')">Play a tiny game →</button>
+
+</section>
+
+<!-- PAGE 6: HEART GAME -->
+
+<section id="game" class="page">
+
+  <h2>A Tiny Heart Hunt</h2>
+
+  <p>Find and tap all three hearts!</p>
+
+  <div>
+
+    <span class="heart" onclick="collect(this)">♡</span>
+
+    <span class="heart" onclick="collect(this)">♡</span>
+
+    <span class="heart" onclick="collect(this)">♡</span>
+
+    <span class="heart">⭐️</span>
+
+    <span class="heart">😽</span>
+
+  </div>
+
+  <p id="gameMessage">Hearts collected: 0 / 3</p>
+
+  <button onclick="resetGame()">Play again</button>
+
+  <button onclick="go('secret')">Continue →</button>
+
+</section>
+
+<!-- PAGE 7: SECRET MESSAGE -->
+
+<section id="secret" class="page">
+
+  <h2>Psst... A Little Secret</h2>
+
+  <p>There's a little message hidden here.</p>
+
+  <button onclick="document.getElementById('secretMessage').style.display='block'">
+
+    Reveal secret message ♡
+
+  </button>
+
+  <p id="secretMessage" style="display:none">
+
+    luv you baby ♡
+
+  </p>
+
+  <button onclick="go('ending')">One last page →</button>
+
+</section>
+
+<!-- PAGE 8: ENDING -->
+
+<section id="ending" class="page">
+
+  <div class="sticker">💕💕</div>
+
+  <h1>That's The End</h1>
+
+  <p>thanks for looking through my little scrapbook.</p>
+
+  <p>dont be angry anymore okay .</p>
+
+  <p>and i wasnt ignoring your message. ♡</p>
+
+  <button onclick="go('home')">Read it again ↺</button>
+
+</section>
+  <script>
+
+let heartsCollected = 0;
+
+function go(pageId) {
+
+  document.querySelectorAll('.page').forEach(page => {
+
+    page.classList.remove('active');
+
+  });
+
+  document.getElementById(pageId).classList.add('active');
+
+  window.scrollTo(0, 0);
+
+}
+
+function reveal(element, message) {
+
+  element.textContent = message;
+
+}
+
+function collect(element) {
+
+  if (element.textContent === '♡') {
+
+    element.textContent = '💗';
+
+    heartsCollected++;
+
+    document.getElementById('gameMessage').textContent =
+
+      'Hearts collected: ' + heartsCollected + ' / 3';
+
+    if (heartsCollected === 3) {
+
+      document.getElementById('gameMessage').textContent =
+
+        'You found all three hearts! ♡';
+
+    }
+
+  }
+
+}
+
+function resetGame() {
+
+  heartsCollected = 0;
+
+  document.querySelectorAll('.heart').forEach(heart => {
+
+    if (heart.textContent === '💗') {
+
+      heart.textContent = '♡';
+
+    }
+
+  });
+
+  document.getElementById('gameMessage').textContent =
+
+    'Hearts collected: 0 / 3';
+
+}
+
+</script>
+</body>
+</html> 
